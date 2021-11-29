@@ -13,11 +13,14 @@ get '/anything' do
     'something something'
 end
 
-get '/cat' do
+get '/random_cat' do
+@random_name = ["Amigo", "Misty", "Almond"].sample
+erb(:index)
 
- "<div style='border: dashed red'>
- 
-
-<img src='https://i.imgur.com/jFaSxym.png'/>
-<div/>"
 end
+
+get '/named_cat' do
+    p @name = params[:name]
+    erb(:index)
+    
+    end
