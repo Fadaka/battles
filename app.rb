@@ -19,8 +19,12 @@ erb(:index)
 
 end
 
-get '/named_cat' do
+get '/name_the_cat' do
+    erb(:cat_name)
+end
+
+post '/named_cat' do
+    p params  
     p @name = params[:name]
     erb(:index)
-    
-    end
+end
